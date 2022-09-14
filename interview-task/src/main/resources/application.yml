@@ -1,0 +1,39 @@
+server:
+  port: 7100
+  servlet:
+    context-path: /autosystem
+
+spring:
+  mvc:
+   pathmatch:
+      matching-strategy: ant_path_matcher
+  main:
+    allow-circular-references: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/autosystem
+    username: autosystem
+    password: q1w2e3r4
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  application:
+    name: auto-system
+
+management:
+  server.port: 7110
+  endpoints.web:
+    cors:
+      allowed-origins: '*'
+      allowed-methods: GET
+  endpoint:
+    health:
+      show-details: always
+
+

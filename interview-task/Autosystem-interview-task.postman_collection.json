@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "87d69d34-725c-4dca-832f-b4ec3c794f82",
+		"name": "Autosystem-interview-task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Dealer",
+			"item": [
+				{
+					"name": "Get parts for specific mark, model and name  or description",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://interview.byst.re/autosystem/dealer/vehicle-parts/Volkswagen/Passat/Filtr",
+							"protocol": "https",
+							"host": [
+								"interview",
+								"byst",
+								"re"
+							],
+							"path": [
+								"autosystem",
+								"dealer",
+								"vehicle-parts",
+								"Volkswagen",
+								"Passat",
+								"Filtr"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get availability details for specific part",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://interview.byst.re/autosystem/dealer/warehouse/{partId}",
+							"protocol": "https",
+							"host": [
+								"interview",
+								"byst",
+								"re"
+							],
+							"path": [
+								"autosystem",
+								"dealer",
+								"warehouse",
+								"{partId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get service actions for given mark and model in specific time period",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://interview.byst.re/autosystem/dealer/workshop/Volkswagen/Passat/{startDate i.e = 1663265839}/{endDate i.e = 1663265839}",
+							"protocol": "https",
+							"host": [
+								"interview",
+								"byst",
+								"re"
+							],
+							"path": [
+								"autosystem",
+								"dealer",
+								"workshop",
+								"Volkswagen",
+								"Passat",
+								"{startDate i.e = 1663265839}",
+								"{endDate i.e = 1663265839}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Administrator",
+			"item": [
+				{
+					"name": "Add new service action for specific part",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"partId\": \"1b23565c-41e7-4b21-94f9-92a18d34c121\",\n    \"availableServiceDateStart\": 1663093039,\n    \"availableServiceDateEnd\": 1664561839\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://interview.byst.re/autosystem/administrator/workshop",
+							"protocol": "https",
+							"host": [
+								"interview",
+								"byst",
+								"re"
+							],
+							"path": [
+								"autosystem",
+								"administrator",
+								"workshop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update specific part description",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"updated Description - New Part\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://interview.byst.re/autosystem/administrator/vehicle-parts/1b23565c-41e7-4b21-94f9-92a18d34c121",
+							"protocol": "https",
+							"host": [
+								"interview",
+								"byst",
+								"re"
+							],
+							"path": [
+								"autosystem",
+								"administrator",
+								"vehicle-parts",
+								"1b23565c-41e7-4b21-94f9-92a18d34c121"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
